@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<main>
+		<h1 style="font-weight:700;background: -webkit-linear-gradient(#eee, #333);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Voucher Sale</h1>
+		<div class="container" ng-controller="voucher">
+			<div class="row">
+				<div class="col-sm-4" ng-repeat="p in itemm">
+					<div class="p-2">
+						<div class="card" style="border-radius: 10px;margin-bottom: 10px;">
+						  <img src="/img/voucher.jpg" class="card-img-top" alt="..." style="border-radius: 10px;">
+						  <div class="card-body" style="text-align: right;">
+						  	<span class="badge badge-secondary p-2" style="text-align: left;border-radius: 10px;" id="abc{{$index}}">{{$index}}</span>
+						    <button type="button" class="btn btn-primary" ng-click="gift(p.voucher.voucher_name,p.product.product_id)">Nhận voucher</button>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>

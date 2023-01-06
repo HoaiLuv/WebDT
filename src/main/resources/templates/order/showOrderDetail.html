@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<main>
+		<h1 style="margin-bottom: 10px;">Các sản phẩm trong đơn hàng</h1>
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">Order ID</th>
+		      <th scope="col">Tên sản phẩm</th>
+		      <th scope="col">Số lượng</th>
+		      <th scope="col">Giá</th>
+		      <th scope="col"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="detail: *{listOrderDetail}">
+		      <td>[[${detail.ordetail_id}]]</td>
+		      <td>[[${detail.product_.product_name}]]</td>
+		      <td>[[${detail.ordetail_quantity}]]</td>
+		      <td th:text="${#numbers.formatInteger(detail.ordetail_price,3,'POINT')}">[[${detail.ordetail_price}]]</td>
+		      <td><button style="border-radius: 10px;" class="btn btn-primary" th:attr="ng-click=@{|cart.add(${detail.product_.product_id})|}">Thêm vào giỏ</button></td>
+		    </tr>
+		  </tbody>
+		</table>
+	
+	
+	</main>
+</body>

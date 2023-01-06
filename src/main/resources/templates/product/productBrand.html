@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::main})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<main>
+		<div class="container" ng-controller="MyController">
+			<div class="row">
+				<div dir-paginate="meal in meals | filter:q | itemsPerPage: pageSize" current-page="currentPage" class="col-md-3 mb-2" >
+					<div class="card">
+						<img ng-src="/img/product/{{meal.product_img}}" class="card-img-top p-2" alt="..." style="width: 100%;height: 250px;">
+						<div class="card-body">
+							<a ng-href="/product/{{meal.product_id}}"><h5 class="card-title" style="font-size: 15px;">{{meal.product_name}}</h5></a>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item" >Giá: {{meal.product_price | number : 0}}</li>
+							<li class="list-group-item" >Danh mục: {{meal.product_brand.probrand_name}}</li>
+						</ul>
+						<div class="card-body text-right">
+							<button href="#" class="btn btn-primary" style="border-radius: 10px;font-size: 12px;font-weight: 900;" ng-click="cart.muaHangNhanh(meal.product_id)">Mua Hàng</button> <button href="#"
+								class="btn btn-secondary" style="border-radius: 10px;font-size: 12px;font-weight: 900;" ng-click="cart.add(meal.product_id)">Thêm vào giỏ</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div ng-controller="OtherController" class="m-auto">
+		          <div class="text-center">
+		          <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" ></dir-pagination-controls>
+		          </div>
+		        </div>
+			</div>
+			
+		</div>
+	</main>
+	
+</body>
+</html>

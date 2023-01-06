@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/admin/index :: dynamic(~{::main},'ADMIN')}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<main>
+		<section class="home-blog bg-sand">
+    <div class="container">
+		<!-- section title -->
+		<div class="row justify-content-md-center">
+			<div class="col-xl-5 col-lg-6 col-md-8">
+				<div class="section-title text-center title-ex1">
+					<h2>Trang Quản Lí</h2>
+					<p>Hỗ trợ việc thống kê và thêm xóa sửa những dữ liệu hiện có.</p>
+				</div>
+			</div>
+		</div>
+		<!-- section title ends https://via.placeholder.com/350x380/6495ED/000000 -->
+		<div class="row ">
+			<div class="col-md-6">
+				<div class="media blog-media">
+					
+				  <a href="blog-post-left-sidebar.html"><img style="width: 300px !important;height: 300px;" class="d-flex" src="/img/create.jpg" alt="Generic placeholder image"></a>
+				  <div class="circle">
+				  	<h5 class="day" style="font-size: 20px;">Create</h5>
+				  	<span class="month">C</span>
+				  </div>
+				  <div class="media-body">
+				    <a href=""><h5 class="mt-0">Thêm mới dữ liệu</h5></a>
+				    Thêm dữ liệu vào tất cả các bảng dữ liệu
+				    <a href="blog-post-left-sidebar.html" class="post-link">Đọc thêm</a>
+				    <ul>
+				    	<li>Admin: [[${#request.remoteUser}]]</li>
+				    	<li class="text-right"><a href="blog-post-left-sidebar.html">Database</a></li>
+				    </ul>
+				  </div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="media blog-media">
+				  <a href="blog-post-left-sidebar.html"><img style="width: 300px !important;height: 300px;" class="d-flex" src="/img/update.jpg" alt="Generic placeholder image"></a>
+				  <div class="circle">
+  				  	<h5 class="day" style="font-size: 20px;">Update</h5>
+  				  	<span class="month">U</span>
+  				  </div>
+				  <div class="media-body">
+				    <a href=""><h5 class="mt-0">Cập nhật dữ liệu</h5></a>
+				    Thay đổi thông tin dữ liệu có trong các bảng
+				    <a href="blog-post-left-sidebar.html" class="post-link">Đọc thêm</a>
+				    <ul>
+				    	<li>Admin: [[${#request.remoteUser}]]</li>
+				    	<li class="text-right"><a href="blog-post-left-sidebar.html">Database</a></li>
+				    </ul>
+				  </div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="media blog-media">
+				  <a href="blog-post-left-sidebar.html"><img style="width: 300px !important;height: 300px;" class="d-flex" src="/img/delete.jpg" alt="Generic placeholder image"></a>
+				  <div class="circle">
+  				  	<h5 class="day" style="font-size: 20px;">Delete</h5>
+  				  	<span class="month">D</span>
+  				  </div>
+				  <div class="media-body">
+				    <a href=""><h5 class="mt-0">Xóa dữ liệu</h5></a>
+				    Xóa bất kì dữ liệu tồn tại trong bảng dữ liệu
+				    <a href="blog-post-left-sidebar.html" class="post-link">Đọc thêm</a>
+				    <ul>
+				    	<li>Admin: [[${#request.remoteUser}]]</li>
+				    	<li class="text-right"><a href="blog-post-left-sidebar.html">Database</a></li>
+				    </ul>
+				  </div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="media blog-media">
+				  <a href="blog-post-left-sidebar.html"><img style="width: 300px !important;height: 300px;" class="d-flex" src="/img/read.jpg" alt="Generic placeholder image"></a>
+				  <div class="circle">
+  				  	<h5 class="day" style="font-size: 20px;">Read</h5>
+  				  	<span class="month">R</span>
+  				  </div>
+				  <div class="media-body">
+				    <a href=""><h5 class="mt-0">Xem dữ liệu </h5></a>
+				    Xem thông tin dữ liệu hiện có và các mục được thống kê
+				    <a href="blog-post-left-sidebar.html" class="post-link">Đọc thêm</a>
+				    <ul>
+				    	<li>Admin: [[${#request.remoteUser}]]</li>
+				    	<li class="text-right"><a href="blog-post-left-sidebar.html">Database</a></li>
+				    </ul>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+	
+	</main>
+</body>
+</html>
